@@ -67,67 +67,61 @@ Globally, mental health is a growing socio-economic burden and leads to negative
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{INTRODUCTION}
 
-Mental health is a growing concern in both the developed and the developing countries. Around 1-in-6 people globally (15-20\%) have one or more mental illnesses \cite{}. In the United States, approximately 1 in 5 adults (46.6 million) experienced mental illness in 2017 \cite{} and over one-third (37\%) of students suffer from a mental health condition \cite{}. The financial burden associated with mental illness is substantial and costs America approximately \$193.2 billion per year \cite{}. Individuals living with serious mental illness face an increased risk of chronic medical conditions \cite{}, increased risk of suicide \cite{}, and involvement in anti-social activities \cite{}. Research has also shown prolonged hospitalization and delayed recovery due to negative psychological consequences throughout recovery.
+Mental health is a growing concern in both the developed and the developing countries. Around 1-in-6 people globally (15-20\%) experience one or more mental illnesses \cite{r1}. The financial burden associated with mental illness is substantial and costs America approximately \$193.2 billion per year \cite{r3}. Individuals living with serious mental illness face an increased risk of chronic medical conditions, increased risk of suicide, and involvement in anti-social activities \cite{r5}. Research has also shown prolonged hospitalization and delayed recovery due to negative psychological consequences throughout recovery.
 
-Despite being critical to overall well-being and physical health, diagnoses and treatment of mental illnesses remain low \cite{}. Successful early identification of mental health conditions will make a significant, positive economic and societal impact. Emerging research indicates that intervening early can interrupt the negative course of some mental illnesses and may, in some cases, lessen long-term disability \cite{}. There has however been little research on early detection of mental conditions. 
+Despite being critical to overall well-being and physical health, diagnoses and treatment of mental illnesses remain low. Successful early identification of mental health conditions will make a significant, positive economic and societal impact. Emerging research indicates that intervening early can interrupt the negative course of some mental illnesses and may, in some cases, lessen long-term disability \cite{r2}. There has however been little research on early detection of mental conditions. 
 
-The use of Social Assistive Robots(SARs) in mental health care is nascent, but represents a potentially useful tool in the professional's toolbox. Appealing characteristics of robots such as embodiment, tangibility and interactivity can be leveraged for early detection of mental conditions. In an attempt to leverage robot technology for the early detection of mental illnesses, we have explored the design space of social robots. Our research focuses on developing a social robot that perceives and interprets human emotional state and provides artificial emotion support. Affective touch is a crucial element of social bonding, and emotional support. It has received little research attention due to the technical and social difficult to study human touch. In our robot design, we have explored various haptic cues to provide artificial emotional support. The aim was to design and develop robots that will provide companionship and also collect information to detect early signs of mental illnesses. 
+The use of Social Assistive Robots(SARs) in mental health care is nascent, but represents a potentially useful tool in the professional's toolbox. Appealing characteristics of robots such as embodiment, tangibility and interactivity can be leveraged for early detection of mental conditions. Moreover data from robot sensors can be used to monitor heath status and behaviour to inform clinicians and tailor therapy sessions for individual's benefits. In an attempt to leverage robot technology for the early detection of mental illnesses, we have explored the design space of social robots. Our research focuses on developing a social robot that perceives and interprets human emotional state and provides artificial emotion support for depressed individuals. Affective touch is a crucial element of social bonding, and emotional support. It has received little research attention due to the technical and social difficult to study human touch. In our robot design, we have explored various haptic cues to provide artificial emotional support. Further, we have explored audio, vision and haptic data to interpret the user's emotional state and behaviours. The aim was to design and develop robots that will provide companionship and also collect information to detect early signs of mental illnesses. 
 
 \section{ROBOT DESIGN}
 
-The developed robot ''DOT'' can be seen in figure. The physical dimensions of the robot are 17x15x30 cms and weighs about 2.36 lbs. The robot has 6 DOF, eye-lids open and closing mechanism (2 DOF), eyeballs pan and tilt mechanism (2 DOF) and neck rotation similar to human head (2 DOF). The entire robot is covered with artificial fur to encourage the users to make physical contact with the robot. %The robot skeleton is composed of two main parts: the Head and the Thorax, both connected by a neck. The thorax houses the actuation mechanism for the neck movements and the controllers of the robot. The head houses the actuation mechanism and mechanics for the eyeballs and eye-lids motion.
+The developed robot called ''DOT'' can be seen in figure. The physical dimensions of the robot are 17x15x30 cms and weighs about 2.36 lbs. The robot has 6 DOF, eye-lids open and closing mechanism (2 DOF), eyeballs pan and tilt mechanism (2 DOF) and neck rotation similar to human head (2 DOF). The entire robot is covered with artificial fur to encourage the users to make physical contact with the robot. DOT is equipped with camera, microphone, IMU, and tactile sensors which help it interpret the environment and its user.  
 
-\begin{figure}
-\centering
-    \includegraphics[width=6cm,height=4cm,angle=270]{IMG_8059.jpg}
-\end{figure}
+The gesture recognition system makes use of the contact information obtained from the tactile sensors that cover the robot to classify the contact into a gesture cue that the robot can recognise and respond. In addition, the IMU data is analysed to infer gestures and the robot position relative to the user. The haptic gesture include Stroke, Contact, Hug, Hold, Rub, Pat, and Squeeze. The identifiable posture of the robot including toss, rock, and lift.  
 
+DOT has two layers to generate its proactive behavior: a behavior-planning layer and a behavior generation layer. Depending on its internal states DOT generates behavior. However, the internal state of the robot is influenced by the users mood and emotions. The behaviour-planning layer takes input from the face tracking and emotion detection frameworks to generate the robot's internal state. This layer then decides a particular response from a pool of predefined responses and sends basic behavioral patterns to the behavior-generation layer. The behavior-generation layer generates control references for each actuator to perform the determined behavior. The behavior-generation layer adjusts parameters of priority of behaviors based on the internal states. This creates lifelike behavior that the user will be able to interpret.
 
 
-DOT has two layers to generate its proactive behavior: a behavior-planning layer and a behavior generation layer. Depending on its internal states DOT generates behavior. However, the internal state
-of the robot is influenced by the users mood and emotions. The behaviour-planning layer takes input from the face tracking and emotion detection frameworks to generate the robot 's internal state. This layer then decides a particular response from a pool of predefined responses and sends basic behavioral
-patterns to the behavior-generation layer. The behavior-generation layer generates control references for each actuator to perform the determined behavior. The behavior-generation layer adjusts parameters of priority of behaviors based on the internal states. This creates lifelike behavior that the user will be able to interpret.
 
-\begin{figure}
-\centering
-    \includegraphics[width=9cm,height=4cm]{frame.png}
-\end{figure}
+%\subsection{Haptic and Posture Cues}
 
-\subsection{Haptic and Posture Cues}
+%A fabric tactile sensor, formed by sandwiching a resistive fabric between two conductive fabrics resulting in a matrix of $mxn$ contact points, is used for obtaining tactile information. Due to contact, the pressure increases and the pressure at each point is derived by measuring the potential difference across it. The contact regions in addition to previous contact history is used to classify the tactile input into one of the haptic gestures.  is achieved using the 6 DOF IMU. posture analysis is performed from the data received from the IMU to inform the robot about its surrounding and its position relative to the user.
 
-A fabric tactile sensor, formed by sandwiching a resistive fabric between two conductive fabrics resulting in a matrix of $mxn$ contact points, is used for obtaining tactile information. Due to contact, the pressure increases and the pressure at each point is derived by measuring the potential difference across it. The contact regions in addition to previous contact history is used to classify the tactile input into one of the haptic gestures. The haptic gesture include Stroke, Contact, Hug, Hold, Rub, Pat, and Squeeze. The posture of the robot including toss, rock, and lift is achieved using the 6 DOF IMU. posture analysis is performed from the data received from the IMU to inform the robot about its surrounding and its position relative to the user.
 
-\subsection{Face Tracking}
-The face tracking module is designed to track the user across a room. The Single Short MultiBox detector(SSD) based on \cite{} is used for real-time detecting of faces. This detector is trained on both FER2013 \cite{} and IMDB \cite{} data sets and achieves an accuracy of 93\% in general object detection task together with real-time run-time performance (59FPS). In order to track the person across the room, the face position is maintained at the centre of the camera image plane. The difference is face position between successive images is considered as error and linear rotation is performed to maintain the face at the center of image using the control law.  Only the translation along the x and z axis is considered, a linear rotation at the neck is made to minimize the error vector.
+The face tracking module is designed to track the user across a room. The Single Short MultiBox detector(SSD) is trained to detect faces and a control law is implemented to maintain the detected face at the centre of robot's vision field. The emotion recognition framework is implemented to take the sensor(camera, microphone, and tactile) inputs and interpret the emotional state of the robot. The vision based emotion recognised using the mini-Xception network and the audio based emotions obtained from a train DNN network are combined to obtain the emotional state. The complete software architecture and design features of the robot can be found in \cite{r4}. 
 
-\subsection{Emotion Classification Framework}
+%based on \cite{} is used for real-time detecting of faces. This detector is trained on both FER2013 \cite{} and IMDB \cite{} data sets and achieves an accuracy of 93\% in general object detection task together with real-time run-time performance (59FPS). In order to track the person across the room, the face position is maintained at the centre of the camera image plane. The difference is face position between successive images is considered as error and linear rotation is performed to maintain the face at the center of image using the control law.  Only the translation along the x and z axis is considered, a linear rotation at the neck is made to minimize the error vector.
 
-Emotion recognition module: 
-The emotion recognition framework is implemented to take the sensor(camera, microphone, and tactile) inputs and interpret the emotional state of the robot. First, the audio signal is segmented and then the trained DNN network computes the emotion state distribution for each segment. The frames of video obtained from the camera is fed through the mini-Xception network to obtain the confusion matrix. The mini-Xception network is trained on FER-2013 data set and achieves 82.6\% accuracy. In order to synchronize the audio and video frames, a time stamp is attached to each video frame and audio segment and the average emotion of all the frames corresponding to an audio segment is used for prediction of emotion. Finally the two probabilities are combined using the Hidden Markov Model to obtain an emotional state with an accuracy of 92.3\%. 
-\section{Experiments}
-\subsection{Method}
-To study the effectiveness of the robot, two participants, both female (M=23 yrs) who had not previously interacted with DOT were recruited from the local campus community through convenience sampling. The study took place in a controlled lab environment which was set like a home-theatre with a comfortable chair and side table.  
-The subjects were first introduced to DOT. The experimenter pointed out some of the capabilities of the
-robot(such as emotion recognition and face tracking) and indicated a list of haptic cues that the robot can interpret. During the study, artificial emotions were simulated in the participants. This
-was achieved by the participant watching a video for 22 mins which was created using the ravdness \cite{} and International Affect Picture System \cite{} data-sets. The different emotions triggered were happiness, fear, sadness, anger, amusement, disgust and calmness. The participants were allowed to interact with the robot without any restrictions. After the task, a questionnaire was administered to the
-subject followed by a short interview. 
+%\subsection{Emotion Classification Framework}
 
-\subsection{Measures}
-The questionnaire covered several topics including the interactions between the subject and robot; and DOT’s actions and expressions. In order to objectively investigate the interaction of the participants with DOT, the activities of the participants during the study was recorded.
+%Emotion recognition module: 
+%First, the audio signal is segmented and then the trained DNN network computes the emotion state distribution for each segment. The frames of video obtained from the camera is fed through the mini-Xception network to obtain the confusion matrix. The mini-Xception network is trained on FER-2013 data set and achieves 82.6\% accuracy. In order to synchronize the audio and video frames, a time stamp is attached to each video frame and audio segment and the average emotion of all the frames corresponding to an audio segment is used for prediction of emotion. Finally the two probabilities are combined using the Hidden Markov Model to obtain an emotional state with an accuracy of 92.3\%. 
+
+\section{PILOT EXPERIMENTS}
+%\subsection{Method}
+
+To study the effectiveness of the robot an experiment was conducted. During
+the experiment, artificial emotions including anger, neutral, happy, fear, amusement, and sadness were simulated and the interaction between the robot and user under different emotions was observed. This was achieved by the participant watching a video for 22mins which was created using the Ravdness and International Affect Picture System data-sets. After the task, a questionnaire was administered to the subject followed by a short interview. In addition, the entire experiment was recorded for analysis. 
+
+
+
+%To study the effectiveness of the robot, two participants, both female (M=23 yrs) who had not previously interacted with DOT were recruited from the local campus community through convenience sampling. The study took place in a controlled lab environment which was set like a home-theatre with a comfortable chair and side table.  
+%The subjects were first introduced to DOT. The experimenter pointed out some of the capabilities of the robot(such as emotion recognition and face tracking) and indicated a list of haptic cues that the robot can interpret. During the study, artificial emotions were simulated in the participants. This was achieved by the participant watching a video for 22 mins which was created using the ravdness \cite{} and International Affect Picture System \cite{} data-sets. The different emotions triggered were happiness, fear, sadness, anger, amusement, disgust and calmness. The participants were allowed to interact with the robot without any restrictions.  
+
+%\subsection{Measures}
+%The questionnaire covered several topics including the interactions between the subject and robot; and DOT’s actions and expressions. In order to objectively investigate the interaction of the participants with DOT, the activities of the participants during the study was recorded.
 
 \section{RESULTS}
 \textbf{Results of Video analysis -}
-Analysis of the video recorded during the study showed that the participants continuous interaction between the subject and DOT. It was also observed that participants held the robot facing their point of observation for most parts of the experiment. Further, it was noted that the subjects turned the robot to face them at points when they wanted to talk to the robot or were checking on the robot. 
+Analysis of the video recorded showed continuous interaction between the subjects and DOT. It was also observed that participants held the robot facing their point of observation for most parts of the experiment. Further, it was noted that the subjects turned the robot to face them at points when they wanted to talk to the robot or were checking on the robot. 
 
-\textbf{Results of Questionnaire -}
-Results of the questionnaire indicate that the participants liked the robot behavior and appearance. Questions concerning robot’s appearance and behavior (Eg. Was it comforting to hold the robot? Was the robots behavior disturbing? Was the robot too heavy/big to hold? ) was rated significantly high. The participants also showed strong intent to interact with the robot again.  
 
 \textbf{Response of Participants to DOT -} The participants were excited to meet DOT and greeted it like a friend or a new person during the introduction. The participants interacted with DOT willingly from the beginning, speaking to it, stroking and hugging it. During the study, though they watched a video, the participants continuously
 held the robot on their lap and kept stroking or patting.
 
-\section{CONCLUSION}
-SARs in general have been shown to be effective therapeutic assistants for intervention of mental illnesses. In our research work, we seek to explore the use of social robots for early detection of mental
-illnesses. To this effect, a social robot was designed and a haptic based emotion recognition, gesture recognition and reactive responses were implemented. In investigating how to provide artificial emotional support, a proactive nonverbal behavior set has been developed and experimented though a pilot study. This work informs future research on the design of robots and motivates the integration of social robots for early detection of mental illnesses.
+\section{FUTURE WORK AND CONCLUSION}
+
+In our research work, we seek to explore the use of social robots for early detection of mental illnesses and provide artificial emotional support. To this effect, a social robot was designed and a haptic, visual and audio based emotion recognition, and reactive responses were implemented. Further, in investigating how to provide artificial emotional support, a proactive nonverbal behavior set has been developed and experimented though a pilot study. This work informs future research on the design of robots and motivates the integration of social robots for early detection of mental illnesses. In the future, we aim to conduct field deployment of robots in hospitals and individual homes to understand how people with mental conditions live in their natural environments and how robots might be integrated. Such inclusion of field studies will bridge the gap between controlled laboratories and real-world environments. 
 
 %\subsection{Selecting a Template (Heading 2)}
 
@@ -256,12 +250,11 @@ illnesses. To this effect, a social robot was designed and a haptic based emotio
 \newpage
 \begin{thebibliography}{99}
 
-\bibitem{c1} G. O. Young, ÒSynthetic structure of industrial plastics (Book style with paper title and editor),Ó 	in Plastics, 2nd ed. vol. 3, J. Peters, Ed.  New York: McGraw-Hill, 1964, pp. 15Ð64.
-\bibitem{c2} W.-K. Chen, Linear Networks and Systems (Book style).	Belmont, CA: Wadsworth, 1993, pp. 123Ð135.
-
-
-
-
+\bibitem{r1} H. Ritchie and M. Roser, "Mental Health," 2019. [Online].Available: https://ourworldindata.org/mental-health. [Accessed: 15- Jun- 2019]. 
+\bibitem{r2} American Mental Health Councillors Association, "Need for Early Mental Health Screening," 2011.[Online].Available: https://www.amhca.org/HigherLogic/System/DownloadDocumentFile .ashx?DocumentFileKey=2ca60afe-8be0-af27-2ad9-7100b61ad636&forceDialog=0. [Accessed: 15- Jun- 2019]. 
+\bibitem{r3} T. Insel, "Assessing the Economic Costs of Serious Mental Illness," American Journal of Psychiatry, vol. 165, no. 6, pp.663-665,2008.
+\bibitem{r4} A. Krishnaraj, “Designing Social Robots for Early Detection of Mental Heath Conditions,” (M.S. thesis), Whiting School of Eng., Johns Hopkins Univ., Baltimore, 2019.
+\bibitem{r3} C.W. Colton and R.W. Manderscheid, "Congruencies in increased mortality rates, years of potential life lost, and causes of death among public mental health clients in eight states," Preventing chronic Diseases,vol. 3, no. 2,    Apr 2006. 
 \end{thebibliography}
 
 
