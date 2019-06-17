@@ -6,13 +6,19 @@
 
 %\documentclass[a4paper, 10pt, conference]{ieeeconf}      % Use this line for a4 paper
 
-\IEEEoverridecommandlockouts                              % This command is only needed if 
+%\IEEEoverridecommandlockouts                              % This command is only needed if 
                                                           % you want to use the \thanks command
 
-\overrideIEEEmargins      
+\overrideIEEEmargins     
+
+
+ 
+
+    
 
 % Needed to meet printer requirements.
 \usepackage{graphicx}
+
 %In case you encounter the following error:
 %Error 1010 The PDF file may be corrupt (unable to open PDF file) OR
 %Error 1000 An error occurred while parsing a contents stream. Unable to analyze the PDF file.
@@ -47,6 +53,7 @@ Designing Social Robots for Mental Heath Care
 }
 
 
+
 \begin{document}
 
 
@@ -71,9 +78,12 @@ Mental health is a growing socio-economic burden worldwide and leads to negative
 
 Mental health is a growing concern globally. Around 1-in-6 people in the world experience one or more mental illnesses \cite{r1}. The financial burden associated with mental illness is substantial and costs America approximately \$193.2 billion per year \cite{r3}. Individuals living with mental illness face an increased risk of chronic medical conditions, increased risk of suicide, and involvement in anti-social activities. Despite being critical to overall well-being and physical health, diagnoses and treatment of mental illnesses remain low. Emerging research indicates that intervening early can interrupt the negative course of some mental illnesses and may, in some cases, lessen long-term disability \cite{r2}. 
 
-As evidenced by successful applications in care for individuals with autism (e.g., \cite{scassellati2018improving}), Socially Assistive Robots (SARs) \cite{} represents a promising tool for mental health care. %CMH: cite key SAR paper; defining SAR
-While prior research has explored how SARs might provide social, emotional support and companionship (e.g., \cite{}), %CMH: cite the key paro paper
-this work investigates how a social robot may be used for early detection of mental health risks. In particular, we focus on multimodal sensing of human behavior. %CMH: talk about haptic sensing and why multimodal is needed for inferring unobserved psychological states 
+As evidenced by successful applications in care for individuals with autism (e.g., \cite{sc1}), Socially Assistive Robots (SARs) \cite{S1} represents a promising tool for mental health care. 
+While prior research has explored how SARs might provide social, emotional support and companionship (e.g., \cite{p1}), 
+this work investigates how a social robot may be used for early detection of mental health conditions. In particular, we focus on multi-modal sensor inputs including audio, vision and haptics for sensing human behavior. Since Speech and facial features of most people suffering from mental heath conditions are inconsistant and cannot be relied on as markers for their mood, affective touch as been explored in our design to detect early signs. Such sensor data help achieve interaction goals such as capture and maintain attention, collect subject behaviour information, detect and respond to changes in human moods. In addition, the robot will serve as passive observer and infer the unobserved psychological stressors to better inform therapy.     
+
+
+
 
 
 
@@ -121,7 +131,7 @@ The face tracking module is designed to track the user across a room. The Single
 \section{PILOT EXPERIMENTS}
 
 To study the effectiveness of the robot an experiment was conducted. During
-the experiment, artificial emotions including anger, neutral, happy, fear, amusement, and sadness were simulated and the interaction between the robot and user under different emotions was observed. This was achieved by the participant watching a video for 22mins which was created using the Ravdness and International Affect Picture System data-sets \cite{}. 
+the experiment, artificial emotions including anger, neutral, happy, fear, amusement, and sadness were simulated and the interaction between the robot and user under different emotions was observed. This was achieved by the participant watching a video for 22mins which was created using the Ravdness and International Affect Picture System data-sets \cite{d1}. 
 %After the task, a questionnaire was administered to the subject followed by a short interview. In addition, the entire experiment was recorded for analysis. 
 
 
@@ -155,7 +165,15 @@ This work is supported by the Malone Center for Engineering in Healthcare and th
 \bibitem{r3} T. Insel, "Assessing the Economic Costs of Serious Mental Illness," American Journal of Psychiatry, vol. 165, no. 6, pp.663-665,2008.
 \bibitem{r4} A. Krishnaraj, “Designing Social Robots for Early Detection of Mental Heath Conditions,” (M.S. thesis), Whiting School of Eng., Johns Hopkins Univ., Baltimore, 2019.
 %\bibitem{r5} C.W. Colton and R.W. Manderscheid, "Congruencies in increased mortality rates, years of potential life lost, and causes of death among public mental health clients in eight states," Preventing chronic Diseases,vol. 3, no. 2,    Apr 2006. 
-\bibitem{scassellati2018improving} Scassellati, B., Boccanfuso, L., Huang, C.M., Mademtzi, M., Qin, M., Salomons, N., Ventola, P. and Shic, F., 2018. Improving social skills in children with ASD using a long-term, in-home social robot. Science Robotics, 3(21).
+\bibitem{sc1} Scassellati, B., Boccanfuso, L., Huang, C.M., Mademtzi, M., Qin, M., Salomons, N., Ventola, P. and Shic, F., 2018. Improving social skills in children with ASD using a long-term, in-home social robot. Science Robotics, 3(21).
+
+\bibitem{p1} Wada, K., Shibata, T., Saito, T. and Tanie, K. (2006). Robot assisted activity at a health service facility for the aged for ten weeks: An interim report of a long-term experiment. Proceedings of the Institution of Mechanical Engineers, Part I: Journal of Systems and Control Engineering, 220(8), pp.709-715.
+
+\bibitem{S1} Feil-Seifer, D.and Feil-Seifer, D. and Mataric, M.J. (2019). Defining Socially Assistive Robotics. In: 9th International Conference on Rehabilitation Robotics. Chicago: Proceedings of 2005 IEEE, pp.465-468.
+
+\bibitem{d1}  Eerola, T. and Vuoskoski, J. (2010). A comparison of the discrete and dimensional models of emotion in music. Psychology of Music, 39(1), pp.18-49.
+
+
 
 \end{thebibliography}
 
